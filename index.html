@@ -6,16 +6,30 @@
 <style>
   body { font-family: Arial, sans-serif; margin: 20px; }
   input { width: 300px; padding: 10px; margin-bottom: 15px; }
-  table { width: 60%; border-collapse: collapse; margin-bottom: 30px; margin:0 auto; table-layout: fixed;}
+  table { width: 80%; border-collapse: collapse; margin-bottom: 30px; margin:0 auto; table-layout: fixed;}
   th, td { border: 1px solid #ccc; padding: 8px; text-align: center; }
   .hidden { display: none; }
+.search-container {
+  text-align: center; /* 中央寄せ */
+  margin: 20px 0; /* 上下に余白 */
+}
+
+.search-container input {
+  display: inline-block; /* 横並び */
+  margin: 5px;
+  padding: 8px;
+  width: 250px; /* 横幅を揃える */
+  font-size: 16px;
+}
 </style>
 </head>
 <body>
 
-<h1>書検索</h1>
-<input type="text" id="searchInput1" placeholder="書・異節・改典・典録で検索">
-<input type="text" id="searchInput2" placeholder="キャラ名で検索">
+<h1>検索</h1>
+<div class="search-container">
+  <input type="text" id="searchInput1" placeholder="書・異節・改典・典録で検索">
+  <input type="text" id="searchInput2" placeholder="キャラ名で検索">
+</div>
 
 <h2>ノーマルスタイル（書）</h2>
 <table class="search-table" data-char-col="2">
