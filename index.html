@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>アナザーエデン 検索</title>
+<style>
+  body { font-family: Arial, sans-serif; margin: 20px; }
+  input { width: 300px; padding: 10px; margin-bottom: 15px; }
+  table { width: 80%; border-collapse: collapse; margin-bottom: 30px; margin:0 auto; table-layout: fixed;}
+  th, td { border: 1px solid #ccc; padding: 8px; text-align: center; }
+  .hidden { display: none; }
+.search-container {
+  text-align: center; /* 中央寄せ */
+  margin: 20px 0; /* 上下に余白 */
+}
+
+.search-container input {
+  display: inline-block; /* 横並び */
+  margin: 5px;
+  padding: 8px;
+  width: 250px; /* 横幅を揃える */
+  font-size: 16px;
+}
+</style>
+</head>
+<body>
+
+<h1>検索</h1>
+<div class="search-container">
+  <input type="text" id="searchInput1" placeholder="書・異節・改典・典録で検索">
+  <input type="text" id="searchInput2" placeholder="キャラ名で検索">
+</div>
+
+<h2>ノーマルスタイル（書）</h2>
+<table class="search-table" data-char-col="2">
+  <thead>
+    <tr><th>書</th><th>キャラ</th><th>入手場所</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>ウツタヒメ</td><td>ユキノ</td><td>月影の森</td></tr>
+    <tr><td>シャドウロード</td><td>ツバメ</td><td>月影の森</td></tr>
+    <tr><td>ムラサメ</td><td>ツキハ</td><td>月影の森</td></tr>
+    <tr><td>アマテラス</td><td>アザミ</td><td>月影の森</td></tr>
+    <tr><td>ラパン</td><td>ミュルス</td><td>月影の森</td></tr>
+    <tr><td>ティターン</td><td>ロキド</td><td>月影の森</td></tr>
+    <tr><td>金花猫</td><td>ねここ</td><td>月影の森</td></tr>
+    <tr><td>ウェネーフィカ</td><td>ウェネーフィカ</td><td>月影の森</td></tr>
+    <tr><td>鴉天狗</td><td>イヅナ</td><td>月影の森</td></tr>
+    <tr><td>八百比丘尼</td><td>カグラメ</td><td>月影の森</td></tr>
+    <tr><td>ラズルミーディア</td><td>イウェラ</td><td>ナダラ火山</td></tr>
+    <tr><td>ラブリーシェフ</td><td>ラブリ</td><td>ナダラ火山</td></tr>
+    <tr><td>ジャッジメント</td><td>ロゼッタ</td><td>ナダラ火山</td></tr>
+    <tr><td>ジャッジメント</td><td>ロゼッタ</td><td>古代ゼルベリア大陸 雷</td></tr>
+    <tr><td>ジャッジメント</td><td>ロゼッタ</td><td>古代ゼルベリア大陸 晶</td></tr>
+    <tr><td>ジャッジメント</td><td>ロゼッタ</td><td>古代ゼルベリア大陸 陰</td></tr>
+    <tr><td>ジャッジメント</td><td>ロゼッタ</td><td>失楽の都</td></tr>
+    <tr><td>フレイムロード</td><td>ガリユ</td><td>ナダラ火山</td></tr>
+    <tr><td>ディヴィネーター</td><td>ラディカ</td><td>ナダラ火山</td></tr>
+    <tr><td>マルアハ</td><td>メリナ</td><td>ナダラ火山</td></tr>
+    <tr><td>マルアハ</td><td>メリナ</td><td>古代ゼルベリア大陸 雷</td></tr>
+    <tr><td>マルアハ</td><td>メリナ</td><td>古代ゼルベリア大陸 晶</td></tr>
+    <tr><td>マルアハ</td><td>メリナ</td><td>古代ゼルベリア大陸 陰</td></tr>
+    <tr><td>マルアハ</td><td>メリナ</td><td>失楽の都</td></tr>
+    <tr><td>ミンストレル</td><td>ラクレア</td><td>ナダラ火山</td></tr>
+    <tr><td>アビスデボーテ</td><td>チルリル</td><td>ナダラ火山</td></tr>
+    <tr><td>アビスデボーテ</td><td>チルリル</td><td>古代ゼルベリア大陸 雷</td></tr>
+    <tr><td>アビスデボーテ</td><td>チルリル</td><td>古代ゼルベリア大陸 晶</td></tr>
+    <tr><td>アビスデボーテ</td><td>チルリル</td><td>古代ゼルベリア大陸 陰</td></tr>
+    <tr><td>アビスデボーテ</td><td>チルリル</td><td>失楽の都</td></tr>
+    <tr><td>シレーナリア</td><td>ピチカ</td><td>ナダラ火山</td></tr>
+    <tr><td>シレーナリア</td><td>ピチカ</td><td>氷の海</td></tr>
+    <tr><td>オレルス</td><td>セリエス</td><td>ナダラ火山</td></tr>
+    <tr><td>オラクル</td><td>メルピピア</td><td>ナダラ火山</td></tr>
+    <tr><td>ドラゴンリーパー</td><td>ウツハラ</td><td>ナダラ火山</td></tr>
+    <tr><td>ニルヴァーナ</td><td>イド</td><td>ナダラ火山</td></tr>
+    <tr><td>エッフェパネノス</td><td>ミルシャ</td><td>人喰い沼</td></tr>
+    <tr><td>エッフェパネノス</td><td>ミルシャ</td><td>古代ゼルベリア大陸 雷</td></tr>
+    <tr><td>エッフェパネノス</td><td>ミルシャ</td><td>古代ゼルベリア大陸 晶</td></tr>
+    <tr><td>エッフェパネノス</td><td>ミルシャ</td><td>古代ゼルベリア大陸 陰</td></tr>
+    <tr><td>エッフェパネノス</td><td>ミルシャ</td><td>失楽の都</td></tr>
+    <tr><td>ジオマンサー</td><td>トゥーヴァ</td><td>人喰い沼</td></tr>
+    <tr><td>ジオマンサー</td><td>トゥーヴァ</td><td>常夜の霊長機関</td></tr>
+    <tr><td>ジオマンサー</td><td>トゥーヴァ</td><td>イスカリオテ</td></tr>
+    <tr><td>ドラゴンルーラー</td><td>ティラミス</td><td>人喰い沼</td></tr>
+    <tr><td>ブレイブストーム</td><td>サイラス</td><td>人喰い沼</td></tr>
+    <tr><td>アウラ</td><td>ヴェイナ</td><td>人喰い沼</td></tr>
+    <tr><td>エイトマーダー</td><td>ナギ</td><td>人喰い沼</td></tr>
+    <tr><td>カンナギ</td><td>ユナ</td><td>人喰い沼</td></tr>
+    <tr><td>フルングニル</td><td>ガラムバレル</td><td>人喰い沼</td></tr>
+    <tr><td>イザヤ</td><td>ミストレア</td><td>人喰い沼</td></tr>
+    <tr><td>イザヤ</td><td>ミストレア</td><td>古代ゼルベリア大陸 雷</td></tr>
+    <tr><td>イザヤ</td><td>ミストレア</td><td>古代ゼルベリア大陸 晶</td></tr>
+    <tr><td>イザヤ</td><td>ミストレア</td><td>古代ゼルベリア大陸 陰</td></tr>
+    <tr><td>イザヤ</td><td>ミストレア</td><td>失楽の都</td></tr>
+    <tr><td>エンマ</td><td>ヒナギク</td><td>人喰い沼</td></tr>
+    <tr><td>キトリニタス</td><td>アルマ</td><td>人喰い沼</td></tr>
+    <tr><td>カーミラ</td><td>エニ</td><td>人喰い沼</td></tr>
+    <tr><td>ドリームディガー</td><td>ヴェレット</td><td>人喰い沼</td></tr>
+    <tr><td>スクナヒコナ</td><td>サザンカ</td><td>人喰い沼</td></tr>
+    <tr><td>ヘルメース</td><td>クチナワ</td><td>人喰い沼</td></tr>
+    <tr><td>メールドシープ</td><td>エルシール</td><td>ミグランス城</td></tr>
+    <tr><td>カラクレナイ</td><td>ヒイナ</td><td>ミグランス城</td></tr>
+    <tr><td>カグツチ</td><td>シオン</td><td>ミグランス城</td></tr>
+    <tr><td>紅焔騎士</td><td>ラディアス</td><td>ミグランス城</td></tr>
+    <tr><td>ワタツミ</td><td>シグレ</td><td>ミグランス城</td></tr>
+    <tr><td>イスマイール</td><td>フェルミナ</td><td>ミグランス城</td></tr>
+    <tr><td>エスクード</td><td>ベルトラン</td><td>ミグランス城</td></tr>
+    <tr><td>聖騎士</td><td>アナベル</td><td>ミグランス城</td></tr>
+    <tr><td>ブリューナク</td><td>ヒスメナ</td><td>工業都市廃墟</td></tr>
+    <tr><td>コマンデュール</td><td>ヴィアッカ</td><td>工業都市廃墟</td></tr>
+    <tr><td>フェイルノート</td><td>クロード</td><td>工業都市廃墟</td></tr>
+    <tr><td>エンプレス</td><td>シェリーヌ</td><td>工業都市廃墟</td></tr>
+    <tr><td>アクアルーラー</td><td>マイティ</td><td>工業都市廃墟</td></tr>
+    <tr><td>スレイヤー</td><td>メリッサ</td><td>工業都市廃墟</td></tr>
+    <tr><td>リヴェット</td><td>メロディ</td><td>工業都市廃墟</td></tr>
+    <tr><td>フェンリル</td><td>セスタ</td><td>工業都市廃墟</td></tr>
+    <tr><td>太乙真人</td><td>シェンファ</td><td>工業都市廃墟</td></tr>
+    <tr><td>デュアルペルソナ</td><td>プレメア</td><td>ゼノドメイン</td></tr>
+    <tr><td>デュアルペルソナ</td><td>プレメア</td><td>常夜の霊長機関</td></tr>
+    <tr><td>デュアルペルソナ</td><td>プレメア</td><td>イスカリオテ</td></tr>
+    <tr><td>グラティネル</td><td>リィカ</td><td>ゼノドメイン</td></tr>
+    <tr><td>インスペクター</td><td>レンリ</td><td>ゼノドメイン</td></tr>
+    <tr><td>エージェント</td><td>セティー</td><td>ゼノドメイン</td></tr>
+    <tr><td>アドミラル</td><td>イスカ</td><td>ゼノドメイン</td></tr>
+    <tr><td>アドミラル</td><td>イスカ</td><td>常夜の霊長機関</td></tr>
+    <tr><td>アドミラル</td><td>イスカ</td><td>イスカリオテ</td></tr>
+    <tr><td>ドラグナー</td><td>シュゼット</td><td>ゼノドメイン</td></tr>
+    <tr><td>ドラグナー</td><td>シュゼット</td><td>常夜の霊長機関</td></tr>
+    <tr><td>ドラグナー</td><td>シュゼット</td><td>イスカリオテ</td></tr>
+    <tr><td>ダインスレイヴ</td><td>ヤクモ</td><td>ゼノドメイン</td></tr>
+    <tr><td>ナルカミ</td><td>オボロ</td><td>ゼノドメイン</td></tr>
+    <tr><td>剣聖</td><td>ジルファニー</td><td>ゼノドメイン</td></tr>
+    <tr><td>ディテクティブ</td><td>リナリア</td><td>ゼノドメイン</td></tr>
+    <tr><td>ブリオングロード</td><td>イーファ</td><td>次元戦艦</td></tr>
+    <tr><td>グレイハウンド</td><td>ハーディー</td><td>次元戦艦</td></tr>
+    <tr><td>ゼノレギオン</td><td>ヘレナ</td><td>次元戦艦</td></tr>
+    <tr><td>グリムリーパー</td><td>イルルゥ</td><td>次元戦艦</td></tr>
+    <tr><td>ホワイトナイト</td><td>シャノン</td><td>次元戦艦</td></tr>
+    <tr><td>アークナイト</td><td>シェイネ</td><td>次元戦艦</td></tr>
+    <tr><td>ネゴシエーター</td><td>ユーイン</td><td>次元戦艦</td></tr>
+    <tr><td>ハイエロファント</td><td>マリエル</td><td>次元戦艦</td></tr>
+    <tr><td>ドラゴミラージュ</td><td>エヴァ</td><td>次元戦艦</td></tr>
+    <tr><td>ネメシス</td><td>ミナルカ</td><td>次元戦艦</td></tr>
+    <tr><td>アノマリーデブリ</td><td>ニルヤ</td><td>次元戦艦</td></tr>
+    <tr><td>インドラ</td><td>ヴィクト</td><td>魔獣城</td></tr>
+    <tr><td>九尾狐</td><td>ホオズキ</td><td>魔獣城</td></tr>
+    <tr><td>魔王</td><td>ギルドナ</td><td>魔獣城</td></tr>
+    <tr><td>スカディ</td><td>フラムラピス</td><td>魔獣城</td></tr>
+    <tr><td>ワルキューレ</td><td>オルレイア</td><td>魔獣城</td></tr>
+    <tr><td>デモンリーパー</td><td>ゼヴィーロ</td><td>蛇肝ダマク</td></tr>
+    <tr><td>ジン</td><td>ミュンファ</td><td>蛇肝ダマク</td></tr>
+    <tr><td>ソウルブリンガー</td><td>デュナリス</td><td>蛇肝ダマク</td></tr>
+    <tr><td>ドラゴンベアラー</td><td>アルド</td><td>蛇肝ダマク</td></tr>
+    <tr><td>ジャガーノート</td><td>エルガ</td><td>蛇肝ダマク</td></tr>
+    <tr><td>エウリュディケ</td><td>マツリカ</td><td>蛇肝ダマク</td></tr>
+    <tr><td>グリモワール</td><td>シンシア</td><td>トト・ドリームランド</td></tr>
+    <tr><td>リーラ・ブリッツ</td><td>キキョウ</td><td>トト・ドリームランド</td></tr>
+    <tr><td>テンペスター</td><td>デューイ</td><td>トト・ドリームランド</td></tr>
+    <tr><td>テンペスター</td><td>デューイ</td><td>常夜の霊長機関</td></tr>
+    <tr><td>テンペスター</td><td>デューイ</td><td>イスカリオテ</td></tr>
+    <tr><td>ゴッドハンド</td><td>エイミ</td><td>トト・ドリームランド</td></tr>
+    <tr><td>アムルタート</td><td>フィロ</td><td>トト・ドリームランド</td></tr>
+    <tr><td>アレス・ダイヤ</td><td>ブリアー</td><td>燃える魔獣城</td></tr>
+    <tr><td>プリンセス</td><td>ミーユ</td><td>ミグランス王宮</td></tr>
+    <tr><td>ライラ</td><td>シエル</td><td>空中庭園</td></tr>
+  </tbody>
+</table>
+
+<h2>アナザースタイル（異節）</h2>
+<table class="search-table" data-char-col="2">
+  <thead>
+    <tr><th>異節</th><th>キャラ名</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>蝶火女</td><td>シュゼット</td></tr>
+    <tr><td>ヒュプノシスト</td><td>マイティ</td></tr>
+    <tr><td>ステラ</td><td>イスカ</td></tr>
+    <tr><td>カースブライド</td><td>トゥーヴァ</td></tr>
+    <tr><td>タケミカヅチ</td><td>シオン</td></tr>
+    <tr><td>ブランムナール</td><td>ラクレア</td></tr>
+    <tr><td>パニッシュメント</td><td>メリナ</td></tr>
+    <tr><td>ミカハヤヒ</td><td>アカネ</td></tr>
+    <tr><td>テンタクルメア</td><td>ナギ</td></tr>
+    <tr><td>フィエルテベート</td><td>ロキド</td></tr>
+    <tr><td>ハイプリエステス</td><td>マリエル</td></tr>
+    <tr><td>ルフトゥ・アルヴ</td><td>ルイナ</td></tr>
+    <tr><td>ブリュンヒルド</td><td>シェイネ</td></tr>
+    <tr><td>ミヅハノメ</td><td>ユナ</td></tr>
+    <tr><td>マグナ・レクス</td><td>クロード</td></tr>
+    <tr><td>ヤソマガツヒ</td><td>ニケ</td></tr>
+    <tr><td>クリムゾンレイ</td><td>セティー</td></tr>
+    <tr><td>ラブロスキアー</td><td>フェルミナ</td></tr>
+    <tr><td>オルコフィーリャ</td><td>エルガ</td></tr>
+    <tr><td>アンダーカバー</td><td>レンリ</td></tr>
+    <tr><td>キュベレー</td><td>ミュルス</td></tr>
+    <tr><td>神聖騎士</td><td>アナベル</td></tr>
+    <tr><td>ティターニア</td><td>ヴェイナ</td></tr>
+    <tr><td>ビューティポリス</td><td>シャノン</td></tr>
+    <tr><td>メロウディーヴァ</td><td>シエル</td></tr>
+    <tr><td>ハスタアンティカ</td><td>フォラン</td></tr>
+    <tr><td>サラシナヒメ</td><td>ツキハ</td></tr>
+    <tr><td>レミテーター</td><td>ロゼッタ</td></tr>
+    <tr><td>ミグルアスピーダ</td><td>ベルトラン</td></tr>
+    <tr><td>鬼火ノ唐繻子</td><td>ホオズキ</td></tr>
+    <tr><td>リビティーナ</td><td>イルルゥ</td></tr>
+    <tr><td>カースシーカー</td><td>ユーイン</td></tr>
+    <tr><td>アラドヴァル</td><td>ヒスメナ</td></tr>
+    <tr><td>フォルトゥーナ</td><td>ラディカ</td></tr>
+    <tr><td>ミネルヴァ</td><td>ミーユ</td></tr>
+    <tr><td>ゼーレグナーデ</td><td>デュナリス</td></tr>
+    <tr><td>スサノオ</td><td>シグレ</td></tr>
+    <tr><td>ドラグノードゥス</td><td>ティラミス</td></tr>
+    <tr><td>アビスリベレータ</td><td>チルリル</td></tr>
+    <tr><td>フェーリクルス</td><td>ツバメ</td></tr>
+    <tr><td>玉茶娘々</td><td>ミュンファ</td></tr>
+    <tr><td>オメテオトル</td><td>ヴィクト</td></tr>
+    <tr><td>サヨリヒメ</td><td>チヨ</td></tr>
+    <tr><td>マーヴェリック</td><td>ハーディー</td></tr>
+    <tr><td>トランスポーター</td><td>キキョウ</td></tr>
+    <tr><td>ソウルキーパー</td><td>ゼヴィーロ</td></tr>
+    <tr><td>プルマディアーナ</td><td>ミストレア</td></tr>
+    <tr><td>猫多羅天女</td><td>オトハ</td></tr>
+    <tr><td>ハルピスモニア</td><td>ミルシャ</td></tr>
+    <tr><td>ヴィーシュロン</td><td>フィロ</td></tr>
+    <tr><td>日輪騎士</td><td>ラディアス</td></tr>
+    <tr><td>ユノー</td><td>イーファ</td></tr>
+    <tr><td>ミラクルワーカー</td><td>レレ</td></tr>
+    <tr><td>オカミノカミ</td><td>ユキノ</td></tr>
+    <tr><td>アリストクラット</td><td>ソイラ</td></tr>
+    <tr><td>アヴェスター</td><td>シンシア</td></tr>
+    <tr><td>アンノーンローズ</td><td>ヴィアッカ</td></tr>
+    <tr><td>五徳猫</td><td>ねここ</td></tr>
+    <tr><td>ヴォルヴァ</td><td>フラムラピス</td></tr>
+    <tr><td>ユミル</td><td>ガラムバレル</td></tr>
+    <tr><td>ジョウルリヒメ</td><td>ヒイナ</td></tr>
+    <tr><td>ファントムシーフ</td><td>デューイ</td></tr>
+    <tr><td>ラブバード</td><td>ラブリ</td></tr>
+    <tr><td>エラト</td><td>ピチカ</td></tr>
+    <tr><td>ブリダーヴァント</td><td>プレメア</td></tr>
+    <tr><td>メーデイア</td><td>メロディ</td></tr>
+    <tr><td>ポリュムニアー</td><td>パリサ</td></tr>
+    <tr><td>シグルドリーヴァ</td><td>オルレイア</td></tr>
+    <tr><td>ウェヌス</td><td>ポム</td></tr>
+    <tr><td>エポックメーカー</td><td>アルマ</td></tr>
+    <tr><td>オーベロン</td><td>イウェラ</td></tr>
+    <tr><td>プリティヴィー</td><td>ヒナギク</td></tr>
+    <tr><td>ヘグニス</td><td>ヤクモ</td></tr>
+    <tr><td>エリス</td><td>ミナルカ</td></tr>
+    <tr><td>ウールヴヘジン</td><td>ジルバー</td></tr>
+    <tr><td>九天玄女</td><td>リンリー</td></tr>
+    <tr><td>ヴァナルガンド</td><td>セスタ</td></tr>
+    <tr><td>ブレイズヒーロー</td><td>ルーフス</td></tr>
+    <tr><td>カメーネ</td><td>エルシール</td></tr>
+    <tr><td>リバイバー</td><td>クレルヴォ</td></tr>
+    <tr><td>サクヤビメ</td><td>コマチ</td></tr>
+    <tr><td>オオクニヌシ</td><td>墨染の軍師（シオン）</td></tr>
+    <tr><td>アークロジスト</td><td>ヴェレット</td></tr>
+    <tr><td>ラストヘイヴン</td><td>赤套の炎使い（デューイ）</td></tr>
+    <tr><td>スウィートレディ</td><td>碧光の鎌使い（シュゼット）</td></tr>
+    <tr><td>プロフェット</td><td>レイヴン</td></tr>
+    <tr><td>エトワール</td><td>黒衣の刀使い（イスカ）</td></tr>
+  </tbody>
+</table>
+
+<h2>エクストラスタイル（改典）</h2>
+<table class="search-table" data-char-col="2">
+  <thead>
+    <tr><th>改典</th><th>キャラ名</th></tr>
+  </thead>
+  <tbody>   
+    <tr><td>ヘカトンケイル</td><td>メリナ</td></tr>
+    <tr><td>シナツヒメノカミ</td><td>ツキハ</td></tr>
+    <tr><td>クリトルリトル</td><td>ナギ</td></tr>
+    <tr><td>ユースティティア</td><td>イスカ</td></tr>
+    <tr><td>ルシフェル</td><td>シュゼット</td></tr>
+    <tr><td>アテナ</td><td>ミーユ</td></tr>
+    <tr><td>ケリュケール</td><td>クロード</td></tr>
+    <tr><td>アルカナム</td><td>マリエル</td></tr>
+    <tr><td>エレシュキガル</td><td>トゥーヴァ</td></tr>
+    <tr><td>エリニュス</td><td>フェルミナ</td></tr>
+    <tr><td>サクラメント</td><td>チルリル</td></tr>
+    <tr><td>叡聖騎士</td><td>アナベル</td></tr>
+    <tr><td>アメノムラクモ</td><td>シグレ</td></tr>
+    <tr><td>猫又権現</td><td>ねここ</td></tr>
+    <tr><td>フツノミタマ</td><td>シオン</td></tr>
+  </tbody>
+</table>
+
+<h2>異時層キャラ（典録）</h2>
+<table class="search-table" data-char-col="2">
+  <thead>
+    <tr><th>典録</th><th>二つ名</th></tr>
+  </thead>
+  <tbody> 
+    <tr><td>ユダ</td><td>黒衣の刀使い（イスカ）</td></tr>
+    <tr><td>レッドスコーピオ</td><td>赤套の炎使い（デューイ</td></tr>
+    <tr><td>チェルノボーグ</td><td>碧光の鎌使い（シュゼット）</td></tr>
+    <tr><td>ペルセポネ</td><td>紫装の槍使い（トゥーヴァ）</td></tr>
+    <tr><td>レシェフ</td><td>銀織の雷使い（プレメア）</td></tr>
+    <tr><td>オモイカネ</td><td>墨染の軍師（シオン）</td></tr>
+    <tr><td>ミヤビノカミ</td><td>花咲の姫君（ツキハ）</td></tr>
+    <tr><td>フロイライン</td><td>月華の令嬢（ヒスメナ）</td></tr>
+    <tr><td>ウカノミタマ</td><td>銀朱の九尾（ホオズキ）</td></tr>
+    <tr><td>ディケー</td><td>残影の佳人（シャノン）</td></tr>
+    <tr><td>タナトス</td><td>深緋の刈人（イルルゥ）</td></tr>
+    <tr><td>オルフェウス</td><td>夢吟の詩人（デュナリス）</td></tr>
+    <tr><td>ジャニーン</td><td>白磁の魔人（ミュンファ）</td></tr>
+    <tr><td>タクハタチヂヒメ</td><td>菊花の剣客（アカネ）</td></tr>
+    <tr><td>ミューズ</td><td>電影の明星（シエル）</td></tr>
+    <tr><td>エンフォーサー</td><td>韜晦の討手（レンリ）</td></tr>
+    <tr><td>ブライアローズ</td><td>茨呪の艶女（シェイネ）</td></tr>
+    <tr><td>フェリスロード</td><td>烏夜の隠密（ツバメ）</td></tr>
+    <tr><td>テアトラルベート</td><td>寂寞の舞台人（ロキド）</td></tr>
+    <tr><td>アメノウズメ</td><td>氷塵の歌姫（ユキノ）</td></tr>
+    <tr><td>ヴォルール</td><td>義侠の猟人（ラクレア）</td></tr>
+    <tr><td>ダイコクテン</td><td>茜袖の旅商人（シグレ）</td></tr>
+  </tbody>
+</table>
+
+<script>
+const searchInput1 = document.getElementById("searchInput1");
+const searchInput2 = document.getElementById("searchInput2");
+const tables = document.querySelectorAll("table.search-table");
+const rows = document.querySelectorAll("table.search-table tbody tr");
+
+function toHiragana(str) {
+  return str.replace(/[\u30a1-\u30f6]/g, ch =>
+    String.fromCharCode(ch.charCodeAt(0) - 0x60)
+  );
+}
+
+function filterRows() {
+  const keyword1 = toHiragana(searchInput1.value.trim().toLowerCase());
+  const keyword2 = toHiragana(searchInput2.value.trim().toLowerCase());
+  let matchFound = false;
+
+  rows.forEach(row => {
+    const table = row.closest("table");
+    const charColIndex = parseInt(table.dataset.charCol) - 1; // data-char-col → 0-based index
+    const cells = row.querySelectorAll("td");
+
+    const col1Text = toHiragana((cells[0]?.innerText || "").toLowerCase()); // 書
+    const charText = toHiragana((cells[charColIndex]?.innerText || "").toLowerCase()); // キャラ名
+
+    const match1 = !keyword1 || col1Text.includes(keyword1);
+    const match2 = !keyword2 || charText.includes(keyword2);
+
+    if (match1 && match2) {
+      row.classList.remove("hidden");
+      matchFound = true;
+    } else {
+      row.classList.add("hidden");
+    }
+  });
+
+  const noResult = document.getElementById("noResult");
+  const h2Element = document.querySelector("h2");
+
+  if (!matchFound && (keyword1 || keyword2)) {
+    if (!noResult) {
+      const msg = document.createElement("p");
+      msg.id = "noResult";
+      msg.style.color = "red";
+      msg.innerText = "該当データはありません";
+
+      if (h2Element) {
+        h2Element.parentNode.insertBefore(msg, h2Element);
+      } else {
+        document.body.appendChild(msg); // h2がない場合のフォールバック
+      }
+    }
+  } else {
+    if (noResult) noResult.remove();
+  }
+}
+
+searchInput1.addEventListener("keyup", filterRows);
+searchInput2.addEventListener("keyup", filterRows);
+</script>
+
+
+
+</body>
+</html>
+
