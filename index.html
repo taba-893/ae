@@ -29,6 +29,7 @@
 <div class="search-container">
   <input type="text" id="searchInput1" placeholder="書・異節・改典・典録で検索">
   <input type="text" id="searchInput2" placeholder="キャラ名で検索">
+  <input type="text" id="searchInput3" placeholder="アナザーダンジョンで検索">
 </div>
 
 <h2>ノーマルスタイル（書）</h2>
@@ -287,8 +288,9 @@
 </table>
 
 <script>
-const searchInput1 = document.getElementById("searchInput1");
-const searchInput2 = document.getElementById("searchInput2");
+const searchInput1 = document.getElementById("searchInput1"); // 書・異節・改典・典録
+const searchInput2 = document.getElementById("searchInput2"); // キャラ名
+const searchInput3 = document.getElementById("searchInput3"); // 入手場所（追加）
 const tables = document.querySelectorAll("table.search-table");
 const rows = document.querySelectorAll("table.search-table tbody tr");
 
@@ -299,22 +301,28 @@ function toHiragana(str) {
 }
 
 function filterRows() {
-  const keyword1 = toHiragana(searchInput1.value.trim().toLowerCase());
-  const keyword2 = toHiragana(searchInput2.value.trim().toLowerCase());
+  const keyword1 = toHiragana((searchInput1?.value || "").trim().toLowerCase());
+  const keyword2 = toHiragana((searchInput2?.value || "").trim().toLowerCase());
+  const keyword3 = toHiragana((searchInput3?.value || "").trim().toLowerCase()); // 入手場所
   let matchFound = false;
 
   rows.forEach(row => {
     const table = row.closest("table");
-    const charColIndex = parseInt(table.dataset.charCol) - 1; // data-char-col → 0-based index
+    const charColIndex = parseInt(table.dataset.charCol) - 1; // 0-based index
     const cells = row.querySelectorAll("td");
 
-    const col1Text = toHiragana((cells[0]?.innerText || "").toLowerCase()); // 書
-    const charText = toHiragana((cells[charColIndex]?.innerText || "").toLowerCase()); // キャラ名
+    // 列テキスト取得（安全に）
+    const col1Text  = toHiragana((cells[0]?.innerText || "").toLowerCase());                 // 書/異節/改典/典録
+    const charText  = toHiragana((cells[charColIndex]?.innerText || "").toLowerCase());      // キャラ名
+    const hasPlace  = cells.length >= 3;                                                      // 入手場所列の有無
+    const placeText = hasPlace ? toHiragana((cells[2].innerText || "").toLowerCase()) : "";   // 入手場所（ノーマルのみ）
 
+    // AND 条件（キーワード未入力はスルー）
     const match1 = !keyword1 || col1Text.includes(keyword1);
     const match2 = !keyword2 || charText.includes(keyword2);
+    const match3 = !keyword3 || (hasPlace && placeText.includes(keyword3));
 
-    if (match1 && match2) {
+    if (match1 && match2 && match3) {
       row.classList.remove("hidden");
       matchFound = true;
     } else {
@@ -322,20 +330,19 @@ function filterRows() {
     }
   });
 
+  // メッセージ表示
   const noResult = document.getElementById("noResult");
   const h2Element = document.querySelector("h2");
-
-  if (!matchFound && (keyword1 || keyword2)) {
+  if (!matchFound && (keyword1 || keyword2 || keyword3)) {
     if (!noResult) {
       const msg = document.createElement("p");
       msg.id = "noResult";
       msg.style.color = "red";
       msg.innerText = "該当データはありません";
-
       if (h2Element) {
         h2Element.parentNode.insertBefore(msg, h2Element);
       } else {
-        document.body.appendChild(msg); // h2がない場合のフォールバック
+        document.body.appendChild(msg);
       }
     }
   } else {
@@ -343,9 +350,12 @@ function filterRows() {
   }
 }
 
+// 入力イベント
 searchInput1.addEventListener("keyup", filterRows);
 searchInput2.addEventListener("keyup", filterRows);
+searchInput3.addEventListener("keyup", filterRows); // 追加
 </script>
+
 
 
 
